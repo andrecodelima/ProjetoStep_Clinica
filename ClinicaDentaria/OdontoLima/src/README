@@ -6,7 +6,7 @@ TEMA - Clínica Dentária (DENTISTA)
 	-Pacientes (nome,cpf, nascimento e telefone)
 	-Médicos (nome, CRO, Especialidade)
 	-Consultas (Paciente, Médico,data e hora)
--Consultas
+	-Consultas
 	-Pacientes
 		*Todos
 		*Aniversariantes do Mês (DESAFIO)
