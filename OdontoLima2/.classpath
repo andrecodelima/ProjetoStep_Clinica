@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MySQLConnector"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SqlConnector"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SqlConnect"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
