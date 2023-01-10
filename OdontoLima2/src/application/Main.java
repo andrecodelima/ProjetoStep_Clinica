@@ -1,3 +1,4 @@
+package application;
 import services.Db;
 
 public class Main {
