@@ -1,37 +1,60 @@
 Clínica Dentária  - Ortolima
 
-CREATE DATABASE bd_ortolima
-USE bd_ortolima
+CREATE DATABASE dbClinica
+USE dbClinica
 
---Pacientes
-CREATE TABLE Pacientes(
+--Dentista
+CREATE TABLE dentista(
 
-  id int PRIMARY kEY AUTO_INCREMENT,
-  nome VARCHAR(50) NOT NULL,
-  cpf VARCHAR(15) NOT NULL,
-  telefone VARCHAR(15) NOT NULL,
-  nascimento DATE NOT NULL,
-  endereco VARCHAR(50) NOT NULL,
-  email VARCHAR(100)
+id int primary key auto_increment,
+nome  varchar(100)     not null,
+nascimmento date      not null,
+cpf varchar(15)       not null,
+rg  varchar(15)       not null,
+cro varchar(15)       not null,
+telefone  varchar(15) not null,
+endereco  varchar(100) not null,
+email varchar(100)     not null,
+sexo  varchar(15)     not null
+
+);
+
+-- Paciente
+CREATE TABLE paciente(
+
+id  int primary key auto_increment
+nome  varchar(30)       not null,
+nascimmento date        not null,
+cpf varchar(15)         not null,
+rg  varchar(15)         not null,
+telefone  varchar(15)   not null,
+endereco  varchar(50)   not null,
+email varchar(30)       not null,
+sexo  varchar(15)       not null,
+responsavel varchar(15) not null
+
 
 );
 
 
--- Medicos
-CREATE TABLE medicos(
+-- Funcionario
+CREATE TABLE funcionario(
 
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(50) NOT NULL,
-  cpf VARCHAR(15) NOT NULL,
-  crm VARCHAR(15) NOT NULL, 
-  telefone VARCHAR(15) NOT NULL,
-  nascimento DATE NOT NULL,
-  endereco VARCHAR(50) NOT NULL,
-  email VARCHAR(100)
-
+id int primary key auto_increment
+nome  varchar(30)       not null,
+nascimmento date        not null,
+cpf varchar(15)         not null,
+rg  varchar(15)         not null,
+telefone  varchar(15)   not null,
+endereco  varchar(50)   not null,
+email varchar(30)       not null,
+sexo  varchar(15)       not null,
+funcao  varchar(20)     not null
 
 
 );
+
+
 
 
 
