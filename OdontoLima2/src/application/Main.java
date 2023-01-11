@@ -12,7 +12,7 @@ public class Main {
 		
 		DentistaController d = new DentistaController();
 		
-		d.cadastrar();
+		d.findAll();
 	}
 
 }

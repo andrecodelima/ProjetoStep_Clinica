@@ -1,11 +1,13 @@
 package controllers;
 
-
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import models.Dentista;
 import services.Db;
@@ -107,5 +109,54 @@ public class DentistaController {
 		 DentistaController.addDentista(d);
 	}
 	
+
+	public static ArrayList<Dentista>findAll(){
+	
+		ArrayList<Dentista>list = new ArrayList<Dentista>();
+		Connection conn = Db.Connect();
+		
+		if(conn == null) {
+			System.out.println("Falha na conexão");
+		}else {
+			try {
+				String sql = "SELECT * FROM dentista";
+				Statement st = conn.createStatement();
+				ResultSet result = st.executeQuery(sql);
+			
+				while(result.next()) {
+					list.add(new Dentista(result.getInt("id"),
+										  result.getString("nome"),
+										  result.getDate("nascimento").toLocalDate(),
+										  result.getString("cpf"),
+										  result.getString("rg"),
+										  result.getString("cro"),
+										  result.getString("telefone"),
+										  result.getString("endereco"),
+										  result.getString("email"),
+										  result.getString("sexo"),
+										  result.getString("especialidade")
+										  )
+								);
+				}
+				
+				st.close();
+				conn.close();			
+			}catch(SQLException except){
+				System.out.println(except);
+			}
+			
+		}
+		
+		return list;	
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 }
+
+
