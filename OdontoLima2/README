@@ -21,3 +21,22 @@ TEMA - Clínica Dentária (DENTISTA)
 		*por médico
 
 --------------Lembre-se: use banco de dados MySQL para guardar e consultar os dados
+case 1:
+				break;
+				
+			case 2:
+				System.out.println("----------------------------- Consulta -----------------------------");
+				ArrayList<Dentista> list = DentistaController.findAll();
+				for(Dentista d : list) {
+					
+					Saida.exibirDentista(d);
+				}
+				break;
+			
+			case 3:
+				System.out.println("\nSaindo do Sistema...\n"
+								+ "Obrigado por utilizar \n"
+								+ "Volte sempre!");
+				System.exit(0);
+			
+			}

@@ -19,7 +19,6 @@ public class Db {
 			String pass = "AVNS_ojeKFczds4KsFKuPahQ";
 			
 			conn = DriverManager.getConnection(host,user,pass);
-			System.out.println("Conected!");
 			
 		}catch(SQLException e){
 			System.out.println(e);

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import models.Dentista;
 import services.Db;
-import services.Entrada;
+import services.ReadService;
 
 public class DentistaController {
 	
@@ -20,7 +20,7 @@ public class DentistaController {
 		
 		try {
 			String sql = "INSERT INTO dentista "
-						+ "(nome,nascimmento,cpf,rg,cro,telefone,endereco,email,sexo)"
+						+ "(nome,nascimento,cpf,rg,cro,telefone,endereco,email,sexo)"
 						+ " VALUES(?,?,?,?,?,?,?,?,?)";
 			
 			PreparedStatement st = conn.prepareStatement(sql);
@@ -53,77 +53,7 @@ public class DentistaController {
 		
 	}
 	
-	
-	public static void cadastrar() {
-		Dentista d = new Dentista();
 		
-		 int ano;
-		 int mes;
-		 int dia;
-		
-		
-		 System.out.println("Cadastro de Dentista");
-		 System.out.println("--------------------");
-		 
-		 System.out.print("Nome: ");
-		 d.setNome(Entrada.entTexto());
-		 
-		 //Nascimento
-		 System.out.print("Ano: ");
-		 ano = Entrada.entInt();
-		 
-		 System.out.print("Mês: ");
-		 mes = Entrada.entInt();
-		 
-		 System.out.print("Dia: ");
-		 dia = Entrada.entInt();
-		 
-		 LocalDate nascimento = LocalDate.of(ano,mes,dia);
-		 d.setNascimento(nascimento);
-		 //
-		 
-		 System.out.print("CPF: ");
-		 d.setCpf(Entrada.entTexto());
-		 
-		 System.out.print("RG: ");
-		 d.setRg(Entrada.entTexto());
-		 
-		 System.out.print("CRO: ");
-		 d.setCro(Entrada.entTexto());
-		 
-		 System.out.print("Telefone: ");
-		 d.setTelefone(Entrada.entTexto());
-		 
-		 System.out.print("Endereço: ");
-		 d.setEndereco(Entrada.entTexto());
-		 
-		 System.out.print("E-mail: ");
-		 d.setEmail(Entrada.entTexto());
-		 
-		 System.out.print("Gênero: ");
-		 d.setSexo(Entrada.entTexto());
-		 
-		 System.out.print("Especialidade: ");
-		 d.setEspecialidade(Entrada.entTexto());
-		 
-		 DentistaController.addDentista(d);
-	}
-	
-//	public static void exibirDentista(Dentista d) {
-//		
-//		System.out.println("ID: " 				+ d.getId());
-//		System.out.println("Nome: "  			+ d.getNome());
-//		System.out.println("CPF: "  			+ d.getCpf());
-//		System.out.println("RG: "  				+ d.getRg());
-//		System.out.println("CRO: "  			+ d.getCro());
-//		System.out.println("Telefone: "  		+ d.getTelefone());
-//		System.out.println("Endereço: "  		+ d.getEndereco());
-//		System.out.println("E-mail: "  			+ d.getEmail());
-//		System.out.println("Gênero: "  			+ d.getSexo());
-//		System.out.println("Especialidade: "  	+ d.getEspecialidade());
-//		
-//	}
-	
 	public static ArrayList<Dentista>findAll(){
 	
 		ArrayList<Dentista>list = new ArrayList<Dentista>();

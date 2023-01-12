@@ -1,11 +1,14 @@
 package services;
+import java.util.ArrayList;
+
+import controllers.DentistaController;
 import models.Dentista;
 
 public class Saida {
 	
 	public static void exibirDentista(Dentista d) {
 		
-		System.out.println("__________________________________________________________________");
+		System.out.println("___________________________________________________________________");
 		System.out.println(" ");
 		
 		System.out.println("ID: " 				+ d.getId());
@@ -19,8 +22,19 @@ public class Saida {
 		System.out.println("Gênero: "  			+ d.getSexo());
 		System.out.println("Especialidade: "  	+ d.getEspecialidade());
 		
-		System.out.println("__________________________________________________________________");
+		System.out.println("___________________________________________________________________");
 		System.out.println(" ");
 		
 	}
+
+	 
+	
+//	public static void consultar() {
+//		System.out.println("----------------------------- Consulta -----------------------------");
+//		ArrayList<Dentista> list = DentistaController.findAll();
+//		for(Dentista d : list) {
+//			
+//			Saida.exibirDentista(d);
+//	}
+
 }

@@ -2,7 +2,7 @@ package services;
 
 import java.util.Scanner;
 
-public class Entrada {
+public class ReadService {
 	public static String entTexto() {
 
 		Scanner sc = new Scanner(System.in);

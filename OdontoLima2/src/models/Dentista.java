@@ -7,7 +7,7 @@ public class Dentista {
 	
 	private int id;
 	private String nome;
-	private LocalDate nascimento;
+	private LocalDate nascimento; 
 	private String cpf;
 	private String rg;
 	private String cro;
