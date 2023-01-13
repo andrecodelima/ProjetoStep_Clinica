@@ -4,10 +4,20 @@ import java.util.Scanner;
 
 public class ReadService {
 	public static String entTexto() {
+		
+		String valor = "";
+		
+		try {
+			Scanner sc = new Scanner(System.in);
+			valor = sc.next();
+//			sc.close();
+			
+		}catch(Exception e) {
+			System.err.println("\nTexto inválido!");
+		}
 
-		Scanner sc = new Scanner(System.in);
-
-		return sc.nextLine();
+		return valor;
+		
 	}
 
 	public static int entInt() {
@@ -20,13 +30,14 @@ public class ReadService {
 				Scanner sc = new Scanner(System.in);
 				valor = sc.nextInt();
 				certo = true;
-
+				
 			} catch (Exception e) {
 				System.out.print("ERRO\n" + "Número inteiro solicitado! \n" + "Tente outra vez: ");
 			}
 		}
-
+//		sc.close();
 		return valor;
+		
 	}
 
 	public static double entDecimal() {
@@ -39,7 +50,8 @@ public class ReadService {
 				Scanner sc = new Scanner(System.in);
 				valor = sc.nextDouble();
 				certo = true;
-
+//				sc.close();
+				
 			} catch (Exception e) {
 				System.out.print("ERRO\n" + "Número decimal solicitado! \n" + "Tente outra vez: ");
 			}

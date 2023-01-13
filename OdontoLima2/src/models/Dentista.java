@@ -1,6 +1,5 @@
 package models;
 
-import java.time.Instant;
 import java.time.LocalDate;
 
 public class Dentista {
@@ -124,8 +123,7 @@ public class Dentista {
 		this.especialidade = especialidade;
 	}
 
-	
-	
+		
 
 }
 

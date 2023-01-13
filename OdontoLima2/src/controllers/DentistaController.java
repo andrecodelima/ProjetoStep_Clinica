@@ -6,12 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import models.Dentista;
 import services.Db;
-import services.ReadService;
 
 public class DentistaController {
 	
@@ -52,7 +50,6 @@ public class DentistaController {
 		}
 		
 	}
-	
 		
 	public static ArrayList<Dentista>findAll(){
 	
