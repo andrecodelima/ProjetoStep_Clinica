@@ -1,7 +1,7 @@
 package view;
 
+import services.DentistaService;
 import services.ReadService;
-import services.dentista.DentistaService;
 
 public class Menu {
 

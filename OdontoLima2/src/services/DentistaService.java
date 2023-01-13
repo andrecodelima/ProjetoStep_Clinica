@@ -1,11 +1,10 @@
-package services.dentista;
+package services;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import controllers.DentistaController;
 import models.Dentista;
-import services.ReadService;
 
 public class DentistaService {
 	
