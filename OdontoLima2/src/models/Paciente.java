@@ -1,12 +1,13 @@
 package models;
 
 import java.time.Instant;
+import java.time.LocalDate;
 
 public class Paciente {
 	
 	private int id;
 	private String nome;
-	private Instant nascimento;
+	private LocalDate nascimento;
 	private String cpf;
 	private String rg;
 	private String telefone;
@@ -18,7 +19,7 @@ public class Paciente {
 	
 	public Paciente() {}
 
-	public Paciente(int id, String nome, Instant nascimento, String cpf, String rg, String telefone,
+	public Paciente(int id, String nome, LocalDate nascimento, String cpf, String rg, String telefone,
 			String endereco, String email, String sexo, String responsavel) {
 		super();
 		this.id = id;
@@ -50,11 +51,11 @@ public class Paciente {
 		this.nome = nome;
 	}
 
-	public Instant getNascimento() {
+	public LocalDate getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(Instant nascimento) {
+	public void setNascimento(LocalDate nascimento) {
 		this.nascimento = nascimento;
 	}
 

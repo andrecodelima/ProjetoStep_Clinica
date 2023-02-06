@@ -1,6 +1,8 @@
 package view;
 
 import services.DentistaService;
+import services.FuncionarioService;
+import services.PacienteService;
 import services.ReadService;
 
 public class Menu {
@@ -55,9 +57,11 @@ public class Menu {
 
 		switch (op) {
 		case 1:
+			PacienteService.cadastrar();
 			break;
 
 		case 2:
+			FuncionarioService.cadastrar();
 			break;
 
 		case 3:
@@ -87,11 +91,11 @@ public class Menu {
 
 		switch (op) {
 		case 1:
-//			PacienteService.consulta();
+			PacienteService.consultar();
 			break;
 
 		case 2:
-//			FuncionarioService.consulta();
+			FuncionarioService.consultar();
 			break;
 
 		case 3:

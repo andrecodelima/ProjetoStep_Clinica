@@ -8,36 +8,36 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import models.Dentista;
+import models.Funcionario;
 import services.Db;
 
-public class DentistaController {
+public class FuncionarioController {
 	
 	//INSERT
-	public static void addDentista(Dentista d) {
+	public static void addFuncionario(Funcionario f) {
 		Connection conn = Db.Connect();
 		
 		try {
-			String sql = "INSERT INTO dentista "
-						+ "(nome,nascimento,cpf,rg,cro,telefone,endereco,email,sexo)"
+			String sql = "INSERT INTO funcionario "
+						+ "(nome,nascimento,cpf,rg,telefone,endereco,email,sexo,funcao)"
 						+ " VALUES(?,?,?,?,?,?,?,?,?)";
 			
 			PreparedStatement st = conn.prepareStatement(sql);
 			
-			st.setString(1, d.getNome());
-			st.setDate(2, Date.valueOf(d.getNascimento()));//conversão de Date to localDate
-			st.setString(3, d.getCpf());
-			st.setString(4, d.getRg());
-			st.setString(5, d.getCro());
-			st.setString(6, d.getTelefone());
-			st.setString(7, d.getEndereco());
-			st.setString(8, d.getEmail());
-			st.setString(9, d.getSexo());
+			st.setString(1, f.getNome());
+			st.setDate(2, Date.valueOf(f.getNascimento()));//conversão de Date to localDate
+			st.setString(3, f.getCpf());
+			st.setString(4, f.getRg());
+			st.setString(5, f.getTelefone());
+			st.setString(6, f.getEndereco());
+			st.setString(7, f.getEmail());
+			st.setString(8, f.getSexo());
+			st.setString(9, f.getFuncao());
 
 			
 			int rows = st.executeUpdate();
 			if(rows != 0) {
-				System.out.println("Dentista cadastrado com sucesso!");
+				System.out.println("Funcionário cadastrado com sucesso!");
 			}else {
 				System.err.println("Falha no cadastro...");
 			}
@@ -54,31 +54,30 @@ public class DentistaController {
 		
 	
 	//SELECT ALL
-	public static ArrayList<Dentista>findAll(){
+	public static ArrayList<Funcionario>findAll(){
 	
-		ArrayList<Dentista>list = new ArrayList<Dentista>();
+		ArrayList<Funcionario>list = new ArrayList<Funcionario>();
 		Connection conn = Db.Connect();
 		
 		if(conn == null) {
 			System.out.println("Falha na conexão");
 		}else {
 			try {
-				String sql = "SELECT * FROM dentista";
+				String sql = "SELECT * FROM funcionario";
 				Statement st = conn.createStatement();
 				ResultSet result = st.executeQuery(sql);
 			
 				while(result.next()) {
-					list.add(new Dentista(result.getInt("id"),
+					list.add(new Funcionario(result.getInt("id"),
 										  result.getString("nome"),
 										  result.getDate("nascimento").toLocalDate(),
 										  result.getString("cpf"),
 										  result.getString("rg"),
-										  result.getString("cro"),
 										  result.getString("telefone"),
 										  result.getString("endereco"),
 										  result.getString("email"),
 										  result.getString("sexo"),
-										  result.getString("especialidade")
+										  result.getString("funcao")
 										  )
 								);
 				}
